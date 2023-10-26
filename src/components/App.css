@@ -182,13 +182,18 @@ h1 span {
 }
 
 .brand-icon{
+  display: flex;
+  justify-content: center;
   align-items: center;
-  text-align: center;
+  width: 15vw;
+  height: 7.5rem;
 }
  .brand-icon img{
   width: 50%;
   height: auto;
+
  }
+
 .contact-section-header{
   display:grid;
   grid-template-columns: auto auto;
