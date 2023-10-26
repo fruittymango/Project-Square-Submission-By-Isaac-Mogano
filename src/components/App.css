@@ -184,3 +184,7 @@ h1 span {
   align-items: center;
   text-align: center;
 }
+ .brand-icon img{
+  width: 50%;
+  height: auto;
+ }

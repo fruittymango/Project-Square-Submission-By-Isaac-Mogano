@@ -10,7 +10,7 @@ import SkhokhoBgImage from '../assets/SkhokhoSeMali.png';
 import TheSavingJarBgImage from '../assets/TheSavingsJar.png';
 
 interface BrandIconInterface{
-  stringifiedHTML: string;
+  imageGuid: string;
 };
 
 interface ArticleSectionInterface{
@@ -23,10 +23,10 @@ interface ArticleSectionInterface{
 function App() {
   const [brandIcons, setBrandIcons] = useState<Array<any>>([]);
 
-  const ParseHTMLComponent: React.FC<BrandIconInterface> = ({stringifiedHTML}) => {
+  const DisplayBrandIcon: React.FC<BrandIconInterface> = ({imageGuid}) => {
     return (
       <div className='brand-icon'>
-        <img src={`http://localhost:3000/brands/${stringifiedHTML}`} />
+        <img src={`http://localhost:3000/brands/${imageGuid}`} />
       </div>
     );
 
