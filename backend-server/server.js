@@ -9,7 +9,7 @@ const PORT = 3000;
 const db = new sqlite3.Database(':memory:');
 
 db.serialize(() => {
-  db.run('CREATE TABLE IF NOT EXISTS brands (id INTEGER PRIMARY KEY AUTOINCREMENT, guid STRING, name TEXT, data TEXT)');
+  db.run('CREATE TABLE IF NOT EXISTS brands (id INTEGER PRIMARY KEY AUTOINCREMENT, guid STRING, name TEXT, data BLOB)');
 });
 
 const corsOptions = {
@@ -25,13 +25,13 @@ app.use(cors(corsOptions));
 
 app.get('/brands/', (req, res) => {
   const id = req.params.id;
-  db.all('SELECT data FROM brands', id, (err, rows) => {
+  db.all('SELECT guid FROM brands', id, (err, rows) => {
     if (err) {
         console.log(err.message)
       return console.error(err.message);
     }
     if (rows) {
-      res.status(200).send(rows.map((value, index) => value.data));
+      res.status(200).send(rows.map((value, index) => value.guid));
     } else {
       res.status(404).send('Image not found');
     }
@@ -47,7 +47,7 @@ app.get('/brands/:id', (req, res) => {
     }
     
     if (row) {
-      res.writeHead(200, { 'Content-Type': 'image/svg+xml' });
+      res.writeHead(200, { 'Content-Type': 'image/png' });
       res.end(row.data);
     } else {
       res.status(404).send('Image not found');
@@ -68,9 +68,9 @@ function synRepoFilesIntoDB(dir, files = []) {
     const fileList = fs.readdirSync(dir);
     for (const file of fileList) {
         const name = `${dir}/${file}`;
-        const blob = fs.readFileSync(name, {encoding:'utf8'});
+        const blob = fs.readFileSync(name);
         const id = v4();
-        db.run('INSERT INTO brands (guid, name, data) VALUES (?, ?, ?)', [id,file.replace('.svg',''), blob], function (err) {
+        db.run('INSERT INTO brands (guid, name, data) VALUES (?, ?, ?)', [id,file.replace('.png',''), blob], function (err) {
             if (err) {
             return console.log(err.message);
             }
