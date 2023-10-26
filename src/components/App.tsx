@@ -73,44 +73,6 @@ function App() {
   }
 
   const ServicesSection: React.FC = () => {
-    // return(
-    //   <section id='services' className='services-section'>
-    //     <div className='section-fg'>
-    //       <div className='section-header'>
-    //         <div className='horizontal-bar'></div>
-    //         <h3>What we do</h3>
-    //       </div>
-    //       <h1>We offer a complete range of bespoke design and development services to help you turn your ideas into digital masterpieces</h1>
-    //       <div className='services-carousel'>
-    //           <div className='services-carousel-item'>
-    //             <img src={WebDevIcon}/>
-    //             <h5>Web development</h5>
-    //             <p>
-    //               We use cutting-edge web development technologies to help our clients fulfill their business goals through functional, reliable solutions.
-    //             </p>
-    //           </div>
-
-    //           <div className='services-carousel-item'>
-    //             <img src={UXIcon}/>
-    //             <h5>User experience & design</h5>
-    //             <p>Our complete web design services will bring your ideas to life and provide you with a sleek, high-performing product that elevates your business.</p>
-    //           </div>
-
-    //           <div className='services-carousel-item'>
-    //             <img src={AppDevIcon}/>
-    //             <h5>Mobile app development</h5>
-    //             <p>Our extensive mobile development experience allows us to create custom native and cross-platform iOS and Android mobile solutions for our clients.</p>
-    //           </div>
-
-    //           <div className='services-carousel-item'>
-    //             <img src={BlockchainIcon}/>
-    //             <h5>Mobile app development</h5>
-    //             <p>Our extensive mobile development experience allows us to create custom native and cross-platform iOS and Android mobile solutions for our clients.</p>
-    //           </div>
-    //       </div>
-    //     </div>
-    //   </section> 
-    // );
 
     return (
       <ArticleSection identifier='services' classIdentifier='services-section' sectionTitle={'What we do'}>
@@ -149,39 +111,6 @@ function App() {
   }
 
   const CaseStudiesSection: React.FC = () => {
-    // return(
-    //   <section id='cases' className='case-studies-section'>
-    //   <div className='section-fg'>
-    //     <div className='section-header'>
-    //       <div className='horizontal-bar'></div>
-    //       <h3>Case studies</h3>
-    //     </div>
-    //     <div className='case-studies-carousel'>
-    //       <div className='case-studies-carousel-item' style={{backgroundImage:`url(${TheOlympianBgImage})`}}>
-    //         <div className='case-studies-card'>
-    //           <div className='horizontal-bar'></div>
-    //           <h4>The Olympian</h4>
-    //           <p>The only athlete in the world to do her Olympic routine in 2020.</p>
-    //         </div>
-    //       </div>
-    //       <div className='case-studies-carousel-item' style={{backgroundImage:`url(${TheSavingJarBgImage})`}}>
-    //         <div className='case-studies-card'>
-    //           <div className='horizontal-bar'></div>
-    //           <h4>The Savings Jar</h4>
-    //           <p>Grow your savings treasure and grow your dragon.</p>
-    //         </div>
-    //       </div>
-    //       <div className='case-studies-carousel-item' style={{backgroundImage:`url(${SkhokhoBgImage})`}}>
-    //         <div className='case-studies-card'>
-    //           <div className='horizontal-bar'></div>
-    //           <h4>Skhokho seMali</h4>
-    //           <p>Helping South Africans become #CashCleva with Skhokho and TymeBank.</p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   </section>
-    // );
 
     return(
       <ArticleSection identifier='cases' classIdentifier='case-studies-section' sectionTitle={'Case studies'}>
@@ -212,29 +141,14 @@ function App() {
     );  
   }
 
-  const SupportingBrandsSection: React.FC = () => {
-    // return(
-    //   <section id='brands' className='clients-section'>
-    //     <div className='section-header'>
-    //       <div className='horizontal-bar'></div>
-    //       <h3>You'll be in good company</h3>
-    //     </div>
-    //     <h1>Trusted by leading brands</h1>
-    //     <div className='brand-carousel'>
-    //       {brandIcons.map((value:any,)=>{
-    //         return (<ParseHTMLComponent  stringifiedHTML={value}/>)
-    //       })}
-    //     </div>        
-    //   </section>
-    // );
-    
+  const SupportingBrandsSection: React.FC = () => {    
     return(
       <ArticleSection identifier='brands' classIdentifier='clients-section' sectionTitle={'You\'ll be in good company'}>
         <>
           <h1>Trusted by leading brands</h1>
           <div className='brand-carousel'>
-            {brandIcons.map((value:any,)=>{
-              return (<ParseHTMLComponent  stringifiedHTML={value}/>)
+            {brandIcons.map((value:string,)=>{
+              return (<DisplayBrandIcon  imageGuid={value}/>)
             })}
           </div> 
         </>
@@ -244,66 +158,20 @@ function App() {
   }
 
   const ContactSection: React.FC = () => {
-    // return(
-    //   <section id='contacts' className='contact-section'>
-    //     <div className='section-header'>
-    //       <div className='horizontal-bar'></div>
-    //       <h3>Contact us</h3>
-    //     </div>
-
-    //     <div style={{display:'flex', justifyContent:'space-between', flexDirection:'row',}}>
-    //       <h1 style={{width:'35rem',}}>Have a project in mind?<span>Let's make it happen</span></h1>
-    //       <div style={{display:'inline-block', position:'relative', alignSelf:'center',left:'-1.5rem'}}>
-    //         <span style={{display:'block'}}>22 Street Name, Suburb, 8000,</span>
-    //         <span style={{display:'block'}}>Cape Town, South Africa</span>
-    //         <span style={{display:'block'}}>+27 21 431 0001</span>
-    //         <span style={{display:'block'}}>enquirie@website.co.za</span>
-    //       </div>
-    //     </div>
-
-    //     <footer style={{display:'flex', flexDirection:'row', gap:'40px', }}>
-    //       <div className='reference-list'>
-    //         <a>Terms of service</a>
-    //         <a>Privacy policy</a>
-    //         <a>Impressum</a>
-    //       </div>
-    //       <div className='reference-list'>
-    //         <a>Facebook</a>
-    //         <a>Instagram</a>
-    //         <a>Twitter</a>
-    //       </div>
-    //       <div className='reference-list'>
-    //         <a>Github</a>
-    //         <a>LinkedIn</a>
-    //         <a>Teams</a>
-    //       </div>
-    //       <div className='reference-list'>
-    //         <a>Youtube</a>
-    //         <a>Behance</a>
-    //         <a>Dribble</a>
-    //       </div>
-    //       <div className='reference-list'>
-    //         <a>Explore open jobs</a>
-    //         <a>2000-2023 Company Name</a>
-    //       </div>
-    //     </footer>
-    //   </section>
-    // );
-
     return (
       <ArticleSection identifier='contacts' classIdentifier='contact-section' sectionTitle='Contact us'>
         <>  
-          <div style={{display:'flex', justifyContent:'space-between', flexDirection:'row',}}>
-            <h1 style={{width:'35rem',}}>Have a project in mind?<span>Let's make it happen</span></h1>
-            <div style={{display:'inline-block', position:'relative', alignSelf:'center',left:'-1.5rem'}}>
-              <span style={{display:'block'}}>22 Street Name, Suburb, 8000,</span>
-              <span style={{display:'block'}}>Cape Town, South Africa</span>
-              <span style={{display:'block'}}>+27 21 431 0001</span>
-              <span style={{display:'block'}}>enquirie@website.co.za</span>
+          <div className='contact-section-header'>
+            <h1>Have a project in mind?<span>Let's make it happen</span></h1>
+            <div className='address-block'>
+              <span>22 Street Name, Suburb, 8000,</span>
+              <span>Cape Town, South Africa</span>
+              <span>+27 21 431 0001</span>
+              <span>enquirie@website.co.za</span>
             </div>
           </div>
 
-          <footer style={{display:'flex', flexDirection:'row', gap:'40px', }}>
+          <footer  className="contact-section-footer">
             <div className='reference-list'>
               <a>Terms of service</a>
               <a>Privacy policy</a>
