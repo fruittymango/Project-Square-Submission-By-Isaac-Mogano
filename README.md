@@ -4,9 +4,11 @@ A basic website that makes use of an api endpoint to retrieve brand logos.
 
 # Pre-requisites
 
-## Installation and Setup Instructions
+ - Clone down this repository.
 
-Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
+ - You will need `node` and `npm` installed globally on your machine. 
+
+## Installation and Setup Instructions
 
 Thirdparty Package Installation:
 
@@ -36,8 +38,14 @@ Test the web application and visit the url in your browser:
 
 ## N.B: See screenshots for expected results.
 
-![RunningWebApp](./screenshots/Screenshot%20from%202023-10-26%2012-04-36.png) 
+### Landing page
 
-![RunningWebApp](./screenshots/Screenshot%20from%202023-10-26%2012-04-51.png) 
-
-![RunningWebApp](./screenshots/Screenshot%20from%202023-10-26%2012-05-31.png)
+![LandingPageScreenshot](./screenshots/Screenshot%20from%202023-10-26%2012-04-36.png)
+### Services section
+![ServicesSectionScreenshot](./screenshots/Screenshot%20from%202023-10-26%2012-04-51.png)
+### Case Studies Section
+![CaseStudiesSectionScreenshot](./screenshots/Screenshot%20from%202023-10-26%2013-26-19.png) 
+### Brands Section
+![BrandsSectionScreenshot](./screenshots/Screenshot%20from%202023-10-26%2013-09-41.png) 
+### Contact Section
+![ContactSectionScreenshot](./screenshots/Screenshot%20from%202023-10-26%2012-05-31.png)
