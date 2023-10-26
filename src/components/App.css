@@ -173,6 +173,7 @@ h1 span {
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap:0.5rem;
 }
 
 .brand-carousel{
@@ -185,7 +186,7 @@ h1 span {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15vw;
+  width: 5rem;
   height: 7.5rem;
 }
  .brand-icon img{
@@ -196,27 +197,20 @@ h1 span {
 
 .contact-section-header{
   display:grid;
-  grid-template-columns: auto auto;
-  column-gap: 25.5vw;
-}
-
-.contact-section-header h1{
-  width:45vw;
+  grid-template-columns: 20fr 8fr;
+  gap: 0;
 }
 
 .address-block{
   display:inline-block;
-  position:relative;
   align-self:center;
 }
 
 .address-block span{
   display: block;
- }
+}
 
 .contact-section-footer{
-  /* display:flex;
   display:grid;
-  grid-template-columns: auto auto auto auto auto;
-  column-gap: 8vw;
+  grid-template-columns: 5fr 5fr 5fr 5fr 8fr;
 }
