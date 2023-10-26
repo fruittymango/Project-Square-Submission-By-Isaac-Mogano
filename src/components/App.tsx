@@ -26,7 +26,7 @@ function App() {
   const ParseHTMLComponent: React.FC<BrandIconInterface> = ({stringifiedHTML}) => {
     return (
       <div className='brand-icon'>
-        <img src={`data:image/svg+xml;utf8,${encodeURIComponent(stringifiedHTML)}`} />
+        <img src={`http://localhost:3000/brands/${stringifiedHTML}`} />
       </div>
     );
 
