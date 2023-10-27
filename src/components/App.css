@@ -33,8 +33,11 @@ section{
 
 .landing-page{
   color: white;
-  background: url('/Hero\ Image.png'), lightgray 50% / cover no-repeat;
-  background-size: 120vw 40rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('/Hero\ Image.png');
+  
   height: 40rem;
   flex-shrink: 0;
   padding-top: 0;
