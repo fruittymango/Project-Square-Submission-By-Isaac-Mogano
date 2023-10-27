@@ -1,6 +1,6 @@
 # Project Square Submission by Isaac Mogano
 
-A basic website that makes use of an api endpoint to retrieve brand logos.
+A basic api server used to retrieve brand logos.
 
 # Pre-requisites
 
@@ -18,7 +18,7 @@ To start the api server, locate and open 'backend-server' directory in the root 
 
 `npm run start`
 
-Test the api, open tour browser and type the following in your address bar:
+Test the api, open your browser and type the following in your address bar:
 
 `http://localhost:3000/`
 

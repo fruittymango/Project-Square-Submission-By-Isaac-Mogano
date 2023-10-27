@@ -18,6 +18,73 @@ body {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   :root{
-    font-size:7px;
+    font-size:6px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size:8px;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  :root{
+    font-size:10px;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size:16px;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1920px) {
+  :root{
+    font-size:16px;
+  }
+
+  .landing-page{
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/Hero\ Image.png');
+    
+    height: 56rem;
+    flex-shrink: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-description{
+    padding-top: 25em;
+  }
+
+  .landing-page h1{
+    height: 5rem;
+    font-size: 4rem;
+    margin-top: 0 ;
+    margin-bottom: 0;
+  }
+  
+  .landing-page p{
+    width:40vw;
+    font-size: 1.7rem;
+  }
+
+  .btn-primary{
+    padding: 1rem 1rem;
+    border-radius: 3.125rem;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  :root{
+    font-size:18px;
   }
 }

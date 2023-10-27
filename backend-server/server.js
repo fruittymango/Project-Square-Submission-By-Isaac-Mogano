@@ -1,5 +1,5 @@
 const express = require('express');
-const {v4} = require('uuid');
+const {v4, validate, version} = require('uuid');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const fs = require('fs');
@@ -79,19 +79,23 @@ app.get('/brands/', (req, res) => {
 */
 app.get('/brands/:guid', (req, res) => {
   const guid = req.params.guid;
-  db.get('SELECT * FROM brands WHERE guid = ?', guid, (err, row) => {
-    if (err) {
-        console.log(err)
-      return console.error(err.message);
-    }
-    
-    if (row) {
-      res.writeHead(200, { 'Content-Type': 'image/png' });
-      res.end(row.data);
-    } else {
-      res.status(404).send('Image not found');
-    }
-  });
+  if (validate(guid) && version(guid) === 4) {
+    db.get('SELECT * FROM brands WHERE guid = ?', guid, (err, row) => {
+      if (err) {
+          console.log(err)
+        return console.error(err.message);
+      }
+      
+      if (row) {
+        res.writeHead(200, { 'Content-Type': 'image/png' });
+        res.end(row.data);
+      } else {
+        res.status(404).send('Image not found');
+      }
+    });
+  } else {
+    res.status(400).send('Invalid guid given.');
+  }
 });
 
 
