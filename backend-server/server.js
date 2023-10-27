@@ -132,7 +132,6 @@ async function synRepoFilesIntoDB(dir) {
             if (err) {
             return console.log(err.message);
             }
-            console.log(`Inserted image with the name ${file.replace('.png','')}, date published ${dateString} and guid ${id}`);
         });
     }
 }
