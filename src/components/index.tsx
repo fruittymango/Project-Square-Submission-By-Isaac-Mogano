@@ -90,37 +90,66 @@ export const ServicesSection: React.FC = () => {
     );
 }
   
-  
+
+interface CaseStudiesSchema{
+    backgroundImageUrl: string;
+    title: string;
+    description: string;
+};
+
 /**
  * This component makes up the case studies section.
  * @returns react element with all three cards and each with their own background image.
 */
 export const CaseStudiesSection: React.FC = () => {
+    const [studies, setStudies] = useState<Array<CaseStudiesSchema>>([]);
+ 
+    useEffect(()=>{
+        setStudies([
+            {
+                title: 'The Olympian',
+                description: 'The only athlete in the world to do her Olympic routine in 2020.',
+                backgroundImageUrl: `${TheOlympianBgImage}`
+            },
+            {
+                title: 'The Savings Jar',
+                description: 'Grow your savings treasure and grow your dragon.',
+                backgroundImageUrl: `${TheSavingJarBgImage}`
+            },
+            {
+                title: 'Skhokho seMali',
+                description: 'Helping South Africans become #CashCleva with Skhokho and TymeBank.',
+                backgroundImageUrl: `${SkhokhoBgImage}`
+            },
+        ]);
+    }, []);
+
     return(
         <ArticleSection identifier='cases' classIdentifier='case-studies-section' sectionTitle={'Case studies'}>
-        <div className='case-studies-carousel'>
-            <div className='case-studies-carousel-item' style={{backgroundImage:`url(${TheOlympianBgImage})`}}>
-            <div className='case-studies-card'>
-                <div className='horizontal-bar'></div>
-                <h4>The Olympian</h4>
-                <p>The only athlete in the world to do her Olympic routine in 2020.</p>
+            <div className='case-studies-carousel'>
+                <button onClick={()=>{
+                    const firstElement = studies.shift();
+                    setStudies([...studies, firstElement ]);
+                }} style={{height:'2rem', alignSelf:'center'}}>{'<'}</button>
+
+                {studies?.map(value => {
+                    return (
+                        <div className='case-studies-carousel-item' style={{backgroundImage:`url(${value.backgroundImageUrl})`}}>
+                            <div className='case-studies-card'>
+                                <div className='horizontal-bar'></div>
+                                <h4>{value.title}</h4>
+                                <p>{value.description}</p>
+                            </div>
+                        </div>
+                    );
+                })}
+
+                <button onClick={()=>{                   
+                    const lastElement = studies.pop();
+                    setStudies([lastElement, ...studies ]);
+                }} style={{height:'2rem', alignSelf:'center'}}>{'>'}</button>
+
             </div>
-            </div>
-            <div className='case-studies-carousel-item' style={{backgroundImage:`url(${TheSavingJarBgImage})`}}>
-            <div className='case-studies-card'>
-                <div className='horizontal-bar'></div>
-                <h4>The Savings Jar</h4>
-                <p>Grow your savings treasure and grow your dragon.</p>
-            </div>
-            </div>
-            <div className='case-studies-carousel-item' style={{backgroundImage:`url(${SkhokhoBgImage})`}}>
-            <div className='case-studies-card'>
-                <div className='horizontal-bar'></div>
-                <h4>Skhokho seMali</h4>
-                <p>Helping South Africans become #CashCleva with Skhokho and TymeBank.</p>
-            </div>
-            </div>
-        </div>
         </ArticleSection>
     );  
 }
